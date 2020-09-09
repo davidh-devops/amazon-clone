@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBXppueZmqL6hrA31mt9hl_q2D67Nmc6_E',
   authDomain: 'clone-15736.firebaseapp.com',
@@ -8,3 +10,8 @@ const firebaseConfig = {
   appId: '1:479825814230:web:512a815f776af2a6e4df77',
   measurementId: 'G-LYSYQP8B7L',
 };
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+export const db = firebaseApp.firestore();
+export const auth = firebaseApp.auth();

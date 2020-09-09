@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './Header.css';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAppState } from '../AppProvider';
+import { createAction, actions } from '../reducer';
 
 const Header = () => {
-  const [{ cart }, dispatch] = useAppState();
+  const [{ user, cart }, dispatch] = useAppState();
+  const history = useHistory();
+  const handleAuth = useCallback(() => {
+    if (user) {
+      dispatch(createAction(actions.SIGH_OUT));
+      history.push('/');
+    }
+  }, [dispatch, user]);
 
   return (
     <div className='header'>
@@ -23,10 +31,20 @@ const Header = () => {
           <SearchIcon className='header__search-icon' />
         </div>
         <div className='header__nav'>
-          <div className='header__option'>
-            <span className='header__option-line-one'>Hello Guest</span>
-            <span className='header__option-line-two'>Sign In</span>
-          </div>
+          <Link
+            to='/login'
+            className='header__option'
+            style={{ textDecoration: 'none', color: 'white' }}
+          >
+            <div className='header__option' onClick={handleAuth}>
+              <span className='header__option-line-one'>
+                Hello {user ? user.email : 'Guest'}
+              </span>
+              <span className='header__option-line-two'>
+                Sign {user ? 'Out' : 'In'}
+              </span>
+            </div>
+          </Link>
           <div className='header__option'>
             <span className='header__option-line-one'>Returns</span>
             <span className='header__option-line-two'>& Orders</span>

@@ -5,7 +5,7 @@ import SubTotal from './Subtotal';
 import CartItem from './CartItem';
 
 const Cart = () => {
-  const [{ cart, products }, dispatch] = useAppState();
+  const [{ user, cart, products }, dispatch] = useAppState();
 
   const getTotalPrice = useCallback(() => {
     return products.reduce((acc, current) => {
@@ -22,6 +22,7 @@ const Cart = () => {
             alt='ad'
           />
           <div className='cart__list'>
+            <h2>Hello, {user?.email || 'Guest'}</h2>
             <h2 className='cart__list-title'>Your Shopping Cart</h2>
             {cart.map((item) => (
               <CartItem key={item} id={item} />

@@ -54,22 +54,6 @@
           flex: 1;
 }
 
-.header__search-input::-webkit-input-placeholder {
-  content: 'search...';
-}
-
-.header__search-input:-ms-input-placeholder {
-  content: 'search...';
-}
-
-.header__search-input::-ms-input-placeholder {
-  content: 'search...';
-}
-
-.header__search-input::placeholder {
-  content: 'search...';
-}
-
 .header__search-icon {
   height: 100%;
   padding: 5px;
@@ -109,6 +93,10 @@
 .header__option-line-two {
   font-size: 0.9rem;
   font-weight: 900;
+}
+
+.header__option .logout {
+  cursor: pointer;
 }
 
 .header__option-cart {
