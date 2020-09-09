@@ -1,0 +1,23 @@
+.home {
+  &__hero {
+    z-index: -1;
+    margin-bottom: -200px;
+
+    &-image {
+      max-width: 100%;
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+      );
+    }
+  }
+
+  &__container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

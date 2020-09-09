@@ -1,0 +1,127 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #131921;
+}
+
+.header__container {
+  margin: auto;
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__logo {
+  width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 20px;
+}
+
+.header__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  cursor: pointer;
+}
+
+.header__search-input {
+  height: 24px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.header__search-input::-webkit-input-placeholder {
+  content: 'search...';
+}
+
+.header__search-input:-ms-input-placeholder {
+  content: 'search...';
+}
+
+.header__search-input::-ms-input-placeholder {
+  content: 'search...';
+}
+
+.header__search-input::placeholder {
+  content: 'search...';
+}
+
+.header__search-icon {
+  height: 100%;
+  padding: 5px;
+  width: auto;
+  background-color: #e79b38;
+}
+
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 20px;
+}
+
+.header__option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header__option + .header__option {
+  margin-left: 20px;
+}
+
+.header__option-line-one {
+  font-size: 0.75rem;
+}
+
+.header__option-line-two {
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.header__option-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.header__cart-count {
+  margin-left: 10px;
+}
+/*# sourceMappingURL=Header.css.map */

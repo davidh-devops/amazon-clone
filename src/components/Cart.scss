@@ -1,0 +1,23 @@
+.cart {
+  &__container {
+    width: 95vw;
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__main {
+    width: 80%;
+  }
+
+  &__ad {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  &__list {
+    &-title {
+      border-bottom: 1px solid lightgray;
+    }
+  }
+}

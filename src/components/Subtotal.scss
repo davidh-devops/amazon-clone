@@ -1,0 +1,38 @@
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  max-height: 250px;
+  border: 1px solid lightgray;
+  padding: 1em;
+  background-color: #f3f3f3;
+  margin-left: 20px;
+
+  &__info,
+  &__gift {
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__gift {
+    display: flex;
+    align-items: center;
+
+    &-checkbox {
+      margin-right: 10px;
+    }
+  }
+
+  &__button {
+    padding: 0.8em;
+    width: 100%;
+    border: none;
+    background-color: #e79b38;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+}

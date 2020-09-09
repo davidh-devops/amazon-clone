@@ -1,0 +1,50 @@
+.product {
+  background-color: rgb(255, 255, 255);
+  padding: 0.2em 1em;
+  margin: 0.6em;
+  // height: 300px;
+  flex: 1 25%;
+  box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  transition: 100ms ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__rating {
+    letter-spacing: 0.15em;
+  }
+
+  &__image {
+    max-height: 60%;
+    object-fit: contain;
+    margin: 5px auto;
+  }
+
+  &__button {
+    border: none;
+    background-color: #e79b38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 0.3em;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    & span {
+      margin-right: 1em;
+    }
+  }
+}
