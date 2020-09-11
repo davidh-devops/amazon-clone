@@ -1,0 +1,61 @@
+.checkout__container > h1 {
+  text-align: center;
+  padding: 10px;
+  background-color: #ededed;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkout section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  margin: 0 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.checkout__title {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.checkout__address, .checkout__items, .checkout__details {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+}
+
+.checkout form {
+  max-width: 400px;
+}
+
+.checkout form h3 {
+  margin-bottom: 20px;
+}
+
+.checkout form button {
+  border: none;
+  background-color: #e79b38;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.5em 1em;
+}
+
+.checkout form button:hover {
+  opacity: 0.9;
+}
+
+.checkout form button:disabled {
+  background-color: lightgray;
+}
+/*# sourceMappingURL=Checkout.css.map */

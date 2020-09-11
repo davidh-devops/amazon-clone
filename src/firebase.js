@@ -14,4 +14,10 @@ const firebaseConfig = {
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export const db = firebaseApp.firestore();
+export const collections = {
+  products: 'products',
+  users: 'users',
+  cart: 'cart',
+  orders: 'orders',
+};
 export const auth = firebaseApp.auth();

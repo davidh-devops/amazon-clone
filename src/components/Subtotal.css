@@ -48,4 +48,12 @@
   font-weight: bold;
   font-size: 0.8rem;
 }
+
+.subtotal__button:hover {
+  opacity: 0.9;
+}
+
+.subtotal__button:disabled {
+  background-color: lightgray;
+}
 /*# sourceMappingURL=Subtotal.css.map */

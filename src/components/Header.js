@@ -33,7 +33,7 @@ const Header = () => {
         <div className='header__nav'>
           <Link
             to='/login'
-            className='header__option'
+            className='header__option--first'
             style={{ textDecoration: 'none', color: 'white' }}
           >
             <div className='header__option' onClick={handleAuth}>
@@ -45,14 +45,24 @@ const Header = () => {
               </span>
             </div>
           </Link>
-          <div className='header__option'>
-            <span className='header__option-line-one'>Returns</span>
-            <span className='header__option-line-two'>& Orders</span>
-          </div>
-          <div className='header__option'>
-            <span className='header__option-line-one'>Your</span>
-            <span className='header__option-line-two'>Prime</span>
-          </div>
+          <Link
+            to='/orders'
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div className='header__option'>
+              <span className='header__option-line-one'>Returns</span>
+              <span className='header__option-line-two'>& Orders</span>
+            </div>
+          </Link>
+          <Link
+            to='/prime'
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div className='header__option'>
+              <span className='header__option-line-one'>Your</span>
+              <span className='header__option-line-two'>Prime</span>
+            </div>
+          </Link>
         </div>
         <Link to='/cart'>
           <div className='header__option-cart'>

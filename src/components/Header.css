@@ -80,10 +80,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 20px;
 }
 
-.header__option + .header__option {
-  margin-left: 20px;
+.header__option--first {
+  margin: 0;
 }
 
 .header__option-line-one {

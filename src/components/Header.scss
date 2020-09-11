@@ -50,9 +50,10 @@
   &__option {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
 
-    & + .header__option {
-      margin-left: 20px;
+    &--first {
+      margin: 0;
     }
 
     &-line-one {

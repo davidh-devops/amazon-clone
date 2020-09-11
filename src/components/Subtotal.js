@@ -25,8 +25,10 @@ const Subtotal = ({ totalItems, totalPrice }) => {
         tousandsSeparator={true}
         prefix='$'
       />
-      <Link to='/checkout'>
-        <button className='subtotal__button'>Proceed to Checkout</button>
+      <Link to={!!totalItems && '/checkout'}>
+        <button className='subtotal__button' disabled={!totalItems}>
+          Proceed to Checkout
+        </button>
       </Link>
     </div>
   );

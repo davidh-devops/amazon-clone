@@ -5,12 +5,21 @@ import { useAppState } from './AppProvider';
 import { createAction, actions } from './reducer';
 import { auth } from './firebase';
 import Header from './components/Header';
-import Login from './components/Login';
-import Home from './components/Home';
-import Cart from './components/Cart';
+import Login from './screens/Login';
+import Home from './screens/Home';
+import Cart from './screens/Cart';
+import Checkout from './screens/Checkout';
+import Orders from './screens/Orders';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { db, collections } from './firebase';
+
+const stripeApiKey =
+  'pk_test_51HPxnuBW47SN0WxevboOCIxXj73GqOA1bnJOVA03a2bhewdfwfIljaLIwV49rLjIi5ZSM63nZGs3XtzGas69qMNZ00CI5xYDx2';
+const promise = loadStripe(stripeApiKey);
 
 function App() {
-  const [{}, dispatch] = useAppState();
+  const [{ user }, dispatch] = useAppState();
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
@@ -19,7 +28,45 @@ function App() {
         dispatch(createAction(actions.LOG_OUT));
       }
     });
+
+    db.collection(collections.products).onSnapshot((snapshot) => {
+      dispatch(
+        createAction(actions.SET_PRODUCTS, {
+          products: snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          })),
+        })
+      );
+    });
   }, []);
+  useEffect(() => {
+    if (user) {
+      db.collection(collections.users)
+        .doc(user?.uid)
+        .collection(collections.orders)
+        .orderBy('createdAt', 'desc')
+        .onSnapshot((snapshot) => {
+          dispatch(
+            createAction(actions.SET_ORDERS, {
+              orders: snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+              })),
+            })
+          );
+        });
+      db.collection(collections.users)
+        .doc(user?.uid)
+        .onSnapshot((snapshot) => {
+          dispatch(
+            createAction(actions.SET_CART, {
+              cart: snapshot.data().cart || [],
+            })
+          );
+        });
+    }
+  }, [user]);
 
   return (
     <Router>
@@ -32,13 +79,19 @@ function App() {
             <Header />
             <Cart />
           </Route>
+          <Route path='/checkout'>
+            <Header />
+            <Elements stripe={promise}>
+              <Checkout />
+            </Elements>
+          </Route>
+          <Route path='/orders'>
+            <Header />
+            <Orders />
+          </Route>
           <Route path='/'>
             <Header />
             <Home />
-          </Route>
-          <Route path='/checkout'>
-            <Header />
-            {/* <Checkout /> */}
           </Route>
         </Switch>
       </div>

@@ -1,0 +1,30 @@
+.order {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: whitesmoke;
+}
+
+.order__title {
+  margin-bottom: 10px;
+}
+
+.order__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.order__id {
+  font-size: 0.7em;
+}
+
+.order__total {
+  font-weight: 500;
+  text-align: right;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=Order.css.map */

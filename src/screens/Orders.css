@@ -1,0 +1,11 @@
+.orders__title {
+  background-color: #ededed;
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0;
+}
+
+.orders__container {
+  width: 90%;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=Orders.css.map */

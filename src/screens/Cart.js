@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import './Cart.css';
 import { useAppState } from '../AppProvider';
-import SubTotal from './Subtotal';
-import CartItem from './CartItem';
+import SubTotal from '../components/Subtotal';
+import CartItem from '../components/CartItem';
 
 const Cart = () => {
   const [{ user, cart, products }, dispatch] = useAppState();

@@ -12,6 +12,9 @@
   height: 150px;
   -o-object-fit: contain;
      object-fit: contain;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 .cart-item__container {
@@ -25,6 +28,9 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
 }
 
 .cart-item__button {
@@ -42,6 +48,7 @@
   font-weight: bold;
   font-size: 0.9rem;
   padding: 0.3em;
+  width: 200px;
 }
 
 .cart-item__button:hover {

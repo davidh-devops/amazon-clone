@@ -43,6 +43,10 @@
       opacity: 0.9;
     }
 
+    &:disabled {
+      background-color: lightgray;
+    }
+
     & span {
       margin-right: 1em;
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { useAppState } from '../AppProvider';
-import Product from './Product';
+import Product from '../components/Product';
 
 const Home = () => {
   const [{ products }, dispatch] = useAppState();

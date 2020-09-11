@@ -4,7 +4,7 @@ import { useAppState } from '../AppProvider';
 import { actions, createAction } from '../reducer';
 import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 
-const CartItem = ({ id }) => {
+const CartItem = ({ id, hideButton = false } = {}) => {
   const [{ products }, dispatch] = useAppState();
   const removeFromCart = useCallback(
     (id) => dispatch(createAction(actions.REMOVE_FROM_CART, { id })),
@@ -23,13 +23,15 @@ const CartItem = ({ id }) => {
           <p className='cart-item__price'>{price}</p>
           <p className='cart-item__rating'>{`⭐️`.repeat(rating)}</p>
         </div>
-        <button
-          className='cart-item__button'
-          onClick={() => removeFromCart(id)}
-        >
-          <span>Remove from Cart</span>
-          <RemoveShoppingCartIcon />
-        </button>
+        {!hideButton && (
+          <button
+            className='cart-item__button'
+            onClick={() => removeFromCart(id)}
+          >
+            <span>Remove from Cart</span>
+            <RemoveShoppingCartIcon />
+          </button>
+        )}
       </div>
     </div>
   );

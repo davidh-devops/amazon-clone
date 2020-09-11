@@ -8,12 +8,14 @@
     margin-right: 20px;
     height: 150px;
     object-fit: contain;
+    flex: 2;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 8;
   }
 
   &__button {
@@ -25,6 +27,7 @@
     font-weight: bold;
     font-size: 0.9rem;
     padding: 0.3em;
+    width: 200px;
 
     &:hover {
       opacity: 0.9;

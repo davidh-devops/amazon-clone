@@ -63,6 +63,10 @@
   opacity: 0.9;
 }
 
+.product__button:disabled {
+  background-color: lightgray;
+}
+
 .product__button span {
   margin-right: 1em;
 }

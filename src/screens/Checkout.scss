@@ -1,0 +1,52 @@
+.checkout {
+  &__container > h1 {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(237, 237, 237);
+    border-bottom: 1px solid lightgray;
+  }
+
+  section {
+    display: flex;
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  &__title {
+    flex: 2;
+  }
+
+  &__address,
+  &__items,
+  &__details {
+    flex: 8;
+  }
+
+  form {
+    max-width: 400px;
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      background-color: #e79b38;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+      padding: 0.5em 1em;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:disabled {
+        background-color: lightgray;
+      }
+    }
+  }
+}
