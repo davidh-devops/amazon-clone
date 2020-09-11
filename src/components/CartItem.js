@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { forwardRef, useCallback } from 'react';
 import './CartItem.css';
 import { useAppState } from '../AppProvider';
 import { actions, createAction } from '../reducer';
@@ -16,7 +16,9 @@ const CartItem = ({ id, hideButton = false } = {}) => {
 
   return (
     <div className='cart-item'>
-      <img className='cart-item__image' src={image} alt='product' />
+      <div className='cart-item__image'>
+        <img src={image} alt='product' />
+      </div>
       <div className='cart-item__container'>
         <div className='cart-item__info'>
           <h2 className='cart-item__title'>{title}</h2>
@@ -36,5 +38,11 @@ const CartItem = ({ id, hideButton = false } = {}) => {
     </div>
   );
 };
+
+export class FunctionalCartItem extends React.Component {
+  render() {
+    return <CartItem {...this.props} />;
+  }
+}
 
 export default CartItem;

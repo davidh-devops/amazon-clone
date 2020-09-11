@@ -2,13 +2,28 @@
   display: flex;
   padding: 0.8em;
   border: 1px solid lightgray;
-  margin-top: 5px;
+  margin-top: 10px;
+  max-width: 900px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  transition: 150ms ease-out;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 
   &__image {
     margin-right: 20px;
     height: 150px;
     object-fit: contain;
     flex: 2;
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
   }
 
   &__container {

@@ -2,7 +2,8 @@ import React, { useCallback } from 'react';
 import './Cart.css';
 import { useAppState } from '../AppProvider';
 import SubTotal from '../components/Subtotal';
-import CartItem from '../components/CartItem';
+import { FunctionalCartItem } from '../components/CartItem';
+import FlipMove from 'react-flip-move';
 
 const Cart = () => {
   const [{ user, cart, products }, dispatch] = useAppState();
@@ -24,9 +25,14 @@ const Cart = () => {
           <div className='cart__list'>
             <h2>Hello, {user?.email || 'Guest'}</h2>
             <h2 className='cart__list-title'>Your Shopping Cart</h2>
-            {cart.map((item) => (
-              <CartItem key={item} id={item} />
-            ))}
+            <FlipMove
+              enterAnimation='accordionVertical'
+              leaveAnimation='accordionVertical'
+            >
+              {cart.map((item) => (
+                <FunctionalCartItem key={item} id={item} />
+              ))}
+            </FlipMove>
           </div>
         </div>
         <SubTotal totalItems={cart.length} totalPrice={getTotalPrice()} />
